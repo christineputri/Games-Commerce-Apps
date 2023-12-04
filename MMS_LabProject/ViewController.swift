@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let commit = "asdasdsad"
+    let commit1=" asd"
 
     override func viewDidLoad() {
         super.viewDidLoad()
