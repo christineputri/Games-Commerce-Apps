@@ -14,7 +14,6 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductsTableViewCell
-        
         cell.itemTitleProduct.text = arr[indexPath.row].titleProduct
         cell.itemCategoryProduct.text = arr[indexPath.row].categoryProduct.rawValue
         cell.itemDetailProduct.text = arr[indexPath.row].description
