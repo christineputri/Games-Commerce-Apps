@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let commit = "asdasdsad"
 
     override func viewDidLoad() {
         super.viewDidLoad()
