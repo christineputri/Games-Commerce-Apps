@@ -2,6 +2,9 @@ import UIKit
 
 class ProductsTableViewCell: UITableViewCell {
 
+    // commit
+    
+    
     @IBOutlet weak var itemDetailProduct: UILabel!
     @IBOutlet weak var itemPriceProduct: UILabel!
     @IBOutlet weak var itemCategoryProduct: UILabel!
