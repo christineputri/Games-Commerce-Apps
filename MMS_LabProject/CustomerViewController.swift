@@ -21,12 +21,11 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductsTableViewCell
         let data = discGames[indexPath.row]
         
-        // Configure the cell with disc game information
-        cell.itemTitleProduct.text = data.name
-        cell.itemCategoryProduct.text = data.category
+        cell.itemImageProduct.image = UIImage(named: data.imageProduct)
+        cell.itemTitleProduct.text = data.titleProduct
+        cell.itemCategoryProduct.text = data.categoryProduct.rawValue
         cell.itemDetailProduct.text = data.description
-        cell.itemPriceProduct.text = String(data.price)
-        // Assuming 'imageProduct' is the image name, make sure to use the correct property for your Disc struct
+        cell.itemPriceProduct.text = String(data.priceProduct)
 
         return cell
     }
@@ -34,7 +33,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
@@ -44,9 +43,9 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
 
     func initData() {
         // Sample data for disc games (replace with your actual data)
-        discGames.append(Disc(name: "Mobile Legend", category: "FPS", price: 2000, description: "Family Friendly Game"))
-        discGames.append(Disc(name: "Mobile Legend", category: "FPS", price: 5000, description: "Family Friendly Game"))
-        discGames.append(Disc(name: "Mobile Legend", category: "FPS", price: 7000, description: "Family Friendly Game"))
-        discGames.append(Disc(name: "Mobile Legend", category: "FPS", price: 27000, description: "Family Friendly Game"))
+        discGames.append(dataItem(priceProduct: 2000, titleProduct: "Mobile Legend", categoryProduct: CategoryGame.FPS, description:  "Family Friendly Game", imageProduct: "mobile_legend"))
+        discGames.append(dataItem(priceProduct: 2000, titleProduct: "Mobile Legend", categoryProduct: CategoryGame.FPS, description:  "Family Friendly Game", imageProduct: "mobile_legend"))
+        discGames.append(dataItem(priceProduct: 2000, titleProduct: "Mobile Legend", categoryProduct: CategoryGame.FPS, description:  "Family Friendly Game", imageProduct: "mobile_legend"))
+        discGames.append(dataItem(priceProduct: 2000, titleProduct: "Mobile Legend", categoryProduct: CategoryGame.FPS, description:  "Family Friendly Game", imageProduct: "mobile_legend"))
     }
 }
