@@ -137,9 +137,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-og-P7S">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-og-P7S">
                                                     <rect key="frame" x="0.0" y="0.0" width="190" height="131"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="190" id="WeZ-Av-clq"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kl-9d-7S3">
                                                     <rect key="frame" x="198" y="11" width="165" height="20"/>
@@ -170,6 +172,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Fix-og-P7S" secondAttribute="bottom" id="BQ4-hB-PY9"/>
+                                                <constraint firstItem="Fix-og-P7S" firstAttribute="top" secondItem="svu-SS-wAO" secondAttribute="top" id="aGm-XT-Bic"/>
+                                                <constraint firstItem="Fix-og-P7S" firstAttribute="leading" secondItem="svu-SS-wAO" secondAttribute="leading" id="zky-qY-Pgy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemCategoryProduct" destination="A7D-LK-HSq" id="H8B-TF-jAs"/>

@@ -15,11 +15,11 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductsTableViewCell
         
-        cell.textLabel?.text = arr[indexPath.row].titleProduct
-        cell.detailTextLabel?.text = arr[indexPath.row].categoryProduct.rawValue
+        cell.itemTitleProduct.text = arr[indexPath.row].titleProduct
+        cell.itemCategoryProduct.text = arr[indexPath.row].categoryProduct.rawValue
         cell.itemDetailProduct.text = arr[indexPath.row].description
         cell.itemPriceProduct.text = String(arr[indexPath.row].priceProduct)
-        cell.imageView?.image = UIImage(named: arr[indexPath.row].imageProduct)
+        cell.itemImageProduct.image = UIImage(named: arr[indexPath.row].imageProduct)
         
         return cell
     }
