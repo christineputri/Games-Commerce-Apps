@@ -8,6 +8,10 @@
 import UIKit
 
 class AdminViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var namaAdmin: UILabel!
+    var nama: String?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr.count
     }
@@ -43,5 +47,6 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         initData()
         tableViewAdmin.dataSource = self
         tableViewAdmin.delegate = self
+        namaAdmin.text = "Hello, Admin \(nama!)"
     }
 }
