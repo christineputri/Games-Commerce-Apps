@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050ED6292B1F0DE000B3FD79 /* AdminSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050ED6282B1F0DE000B3FD79 /* AdminSuccessViewController.swift */; };
 		0511B8F62AE27E9200FB0780 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0511B8F52AE27E9200FB0780 /* data.swift */; };
 		0511B8F82AE2830700FB0780 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0511B8F72AE2830700FB0780 /* AdminViewController.swift */; };
 		0511B8FA2AE2831700FB0780 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0511B8F92AE2831700FB0780 /* CustomerViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050ED6282B1F0DE000B3FD79 /* AdminSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSuccessViewController.swift; sourceTree = "<group>"; };
 		0511B8F52AE27E9200FB0780 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		0511B8F72AE2830700FB0780 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		0511B8F92AE2831700FB0780 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				0511B8FF2AE2895200FB0780 /* ProductsTableViewCell.swift */,
 				058229332B1DCE56007A33CA /* COViewController.swift */,
 				052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */,
+				050ED6282B1F0DE000B3FD79 /* AdminSuccessViewController.swift */,
 			);
 			path = MMS_LabProject;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				052025BA2B1EF87600FA5B9C /* FormAddDataAdminViewController.swift in Sources */,
+				050ED6292B1F0DE000B3FD79 /* AdminSuccessViewController.swift in Sources */,
 				0511B8FA2AE2831700FB0780 /* CustomerViewController.swift in Sources */,
 				0519EC952AE138CD00F187DC /* ViewController.swift in Sources */,
 				0511B8F62AE27E9200FB0780 /* data.swift in Sources */,
