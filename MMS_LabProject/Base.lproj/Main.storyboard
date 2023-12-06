@@ -235,6 +235,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="add"/>
+                                <connections>
+                                    <segue destination="B9f-qm-0dw" kind="show" id="2ij-DM-Gz3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ZS-4m-COH"/>
@@ -266,7 +269,7 @@
             <objects>
                 <viewController id="B9f-qm-0dw" customClass="FormAddDataAdminViewController" customModule="MMS_LabProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCk-J3-XLo">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebI-29-7TU">
@@ -312,13 +315,19 @@
                                 <rect key="frame" x="270" y="388" width="83" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Choose"/>
+                                <connections>
+                                    <action selector="addImage:" destination="B9f-qm-0dw" eventType="touchUpInside" id="Snj-Qf-q4O"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvi-Gq-ZQ8">
-                                <rect key="frame" x="40" y="733" width="313" height="35"/>
+                                <rect key="frame" x="40" y="698" width="313" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Product">
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addDataToDatabase:" destination="B9f-qm-0dw" eventType="touchUpInside" id="2MP-C0-Ojc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-YN-kZn">
                                 <rect key="frame" x="40" y="393" width="82" height="21"/>
@@ -361,6 +370,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3SE-tk-hiI"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="G2T-Ef-PQv" id="PPK-YE-8cd"/>
+                        <outlet property="priceTextField" destination="PJn-CO-JB4" id="Sb1-nK-nzz"/>
+                        <outlet property="titleTextField" destination="wRG-Tk-Las" id="eRY-pz-n0s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49m-fK-8py" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
