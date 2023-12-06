@@ -388,6 +388,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3SE-tk-hiI"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="0rA-vQ-Tdr" id="Zh0-H1-P0G"/>
                         <outlet property="descriptionTextField" destination="G2T-Ef-PQv" id="PPK-YE-8cd"/>
                         <outlet property="imageProduct" destination="OGx-qt-VY0" id="aip-8K-a1q"/>
                         <outlet property="priceTextField" destination="PJn-CO-JB4" id="Sb1-nK-nzz"/>

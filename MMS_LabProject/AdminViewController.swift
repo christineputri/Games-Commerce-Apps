@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
-class AdminViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol controlGameProduct {
+   func loadData()
+}
+
+
+class AdminViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, controlGameProduct {
     
     @IBOutlet weak var namaAdmin: UILabel!
+    var context: NSManagedObjectContext!
     var nama: String?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,11 +49,34 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         return 150
     }
     
+    func loadData() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameProduct")
+        do {
+            let result = try context.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                arr.append(dataItem(priceProduct: data.value(forKey: "productPrice") as! Int, titleProduct: data.value(forKey: "productName") as! String, categoryProduct: CategoryGame(rawValue: data.value(forKey: "productCategory") as! CategoryGame.RawValue) ?? CategoryGame.adventure, description: data.value(forKey: "productDesc") as! String, imageProduct: data.value(forKey: "productImage") as! String))
+            }
+            
+            tableViewAdmin.reloadData()
+        } catch {
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
         tableViewAdmin.dataSource = self
         tableViewAdmin.delegate = self
         namaAdmin.text = "Hello, Admin \(nama!)"
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
+        tableViewAdmin.delegate = self
+        tableViewAdmin.dataSource = self
+        
+        loadData()
     }
 }
