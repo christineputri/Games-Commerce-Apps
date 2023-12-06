@@ -6,30 +6,51 @@ class FormAddDataAdminViewController: UIViewController, UIImagePickerControllerD
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     
+    @IBOutlet weak var imageProduct: UIImageView!
     var imageTemp = "mobile_legend"
     
-    @IBAction func addImage(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
-        picker.sourceType = .photoLibrary
-        present(picker, animated: true)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let imageData = info[.editedImage] as? UIImage else {return}
-        imageTemp = imageData.imageURL
-        dismiss(animated: true)
-    }
+//    @IBAction func addImage(_ sender: Any) {
+//        let picker = UIImagePickerController()
+//        picker.allowsEditing = true
+//        picker.delegate = self
+//        picker.sourceType = .photoLibrary
+//        present(picker, animated: true)
+//    }
     
     @IBAction func addDataToDatabase(_ sender: Any) {
-        arr.append(dataItem(priceProduct: Int(priceTextField.text), titleProduct: titleTextField.text, categoryProduct: CategoryGame.FPS, description: descriptionTextField.text, imageProduct: image))
+//        arr.append(dataItem(priceProduct: Int(priceTextField.text), titleProduct: titleTextField.text, categoryProduct: CategoryGame.FPS, description: descriptionTextField.text, imageProduct: image))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.imageProduct.layer.masksToBounds = false
+        self.imageProduct.clipsToBounds = true
+        tapGesture()
+    }
+    
+    func tapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageProduct.isUserInteractionEnabled = true
+        imageProduct.addGestureRecognizer(tap)
+    }
+    
+    @objc func imageTapped() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageProduct.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
 
 }
+
+//extension FormAddDataAdminViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        imageProduct.image = info[.originalImage] as? UIImage
+//        dismiss(animated: true, completion: nil)
+//    }
+//}
