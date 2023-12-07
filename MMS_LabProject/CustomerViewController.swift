@@ -53,6 +53,9 @@ import UIKit
 
 class CustomerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var totalQuantity: Int = 0
+    var totalPrice: Double = 0.0
+    
     @IBOutlet weak var namaCustomer: UILabel!
     var nama: String?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

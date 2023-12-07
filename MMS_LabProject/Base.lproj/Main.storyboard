@@ -422,6 +422,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="YIJ-zl-0oZ" eventType="touchUpInside" id="wn0-Yq-Hzd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbg-OK-Bf4">
                                 <rect key="frame" x="149" y="477" width="95" height="27"/>
@@ -811,6 +814,14 @@
                             <constraint firstItem="gjW-tx-mMo" firstAttribute="top" secondItem="rUW-zN-vjg" secondAttribute="top" constant="78" id="yMX-3t-ZlH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cvvCC" destination="7nF-hb-cde" id="5Y7-cG-6hp"/>
+                        <outlet property="expCC" destination="gFF-WF-eYB" id="U0O-ff-E3X"/>
+                        <outlet property="nameCC" destination="1ya-oC-PEB" id="jHt-np-NVJ"/>
+                        <outlet property="numberCC" destination="toN-Kz-qgY" id="8BY-KM-IFi"/>
+                        <outlet property="totalPrice" destination="aTt-pW-QQJ" id="mr5-9e-eGA"/>
+                        <outlet property="totalQuantity" destination="Z0F-Xy-1Pi" id="ouT-ei-UBH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd3-Sh-sMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
