@@ -53,7 +53,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             tableViewAdmin.reloadData()
         } catch {
-            
+            print("Add error pas di bagian load data")
         }
     }
     
@@ -62,7 +62,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         initData()
         tableViewAdmin.dataSource = self
         tableViewAdmin.delegate = self
-        namaAdmin.text = "Hello, Admin \(nama!)"
+        namaAdmin.text = "Hello, Admin \(nama ?? "Christine")"
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
@@ -79,5 +79,12 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             let rootView = nextView as! ViewController
             navigationController?.setViewControllers([rootView], animated: true)
         }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "edit_cell") as? EditTableDataViewController{
+            vc.dataCellTable = arr[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            
     }
 }
