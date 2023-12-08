@@ -69,5 +69,9 @@ class FormAddDataAdminViewController: UIViewController, UIImagePickerControllerD
         imageProduct.image = info[.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }

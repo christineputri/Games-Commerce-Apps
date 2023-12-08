@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  MMS_LabProject
-//
-//  Created by prk on 10/19/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,7 +6,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
  
     @IBAction func loginAdmin(_ sender: Any) {
@@ -32,6 +24,10 @@ class ViewController: UIViewController {
             customerView.nama = nama.text
             navigationController?.setViewControllers([customerView], animated: true)
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

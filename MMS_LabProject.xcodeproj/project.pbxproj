@@ -20,7 +20,8 @@
 		0519EC9D2AE138CE00F187DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0519EC9C2AE138CE00F187DC /* Assets.xcassets */; };
 		0519ECA02AE138CE00F187DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0519EC9E2AE138CE00F187DC /* LaunchScreen.storyboard */; };
 		052025BA2B1EF87600FA5B9C /* FormAddDataAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */; };
-		058229342B1DCE56007A33CA /* COViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058229332B1DCE56007A33CA /* COViewController.swift */; };
+		058229342B1DCE56007A33CA /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058229332B1DCE56007A33CA /* CheckoutViewController.swift */; };
+		05E9EF462B22BD2C00C5E7C8 /* EditTableDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E9EF452B22BD2C00C5E7C8 /* EditTableDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		0519EC9F2AE138CE00F187DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0519ECA12AE138CE00F187DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAddDataAdminViewController.swift; sourceTree = "<group>"; };
-		058229332B1DCE56007A33CA /* COViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COViewController.swift; sourceTree = "<group>"; };
+		058229332B1DCE56007A33CA /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		05E9EF452B22BD2C00C5E7C8 /* EditTableDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +86,10 @@
 				0511B8F72AE2830700FB0780 /* AdminViewController.swift */,
 				0511B8F92AE2831700FB0780 /* CustomerViewController.swift */,
 				0511B8FF2AE2895200FB0780 /* ProductsTableViewCell.swift */,
-				058229332B1DCE56007A33CA /* COViewController.swift */,
+				058229332B1DCE56007A33CA /* CheckoutViewController.swift */,
 				052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */,
 				050ED6282B1F0DE000B3FD79 /* AdminSuccessViewController.swift */,
+				05E9EF452B22BD2C00C5E7C8 /* EditTableDataViewController.swift */,
 			);
 			path = MMS_LabProject;
 			sourceTree = "<group>";
@@ -167,7 +170,8 @@
 				0511B8FA2AE2831700FB0780 /* CustomerViewController.swift in Sources */,
 				0519EC952AE138CD00F187DC /* ViewController.swift in Sources */,
 				0511B8F62AE27E9200FB0780 /* data.swift in Sources */,
-				058229342B1DCE56007A33CA /* COViewController.swift in Sources */,
+				05E9EF462B22BD2C00C5E7C8 /* EditTableDataViewController.swift in Sources */,
+				058229342B1DCE56007A33CA /* CheckoutViewController.swift in Sources */,
 				0519EC9B2AE138CD00F187DC /* MMS_LabProject.xcdatamodeld in Sources */,
 				0511B8F82AE2830700FB0780 /* AdminViewController.swift in Sources */,
 				0511B9002AE2895200FB0780 /* ProductsTableViewCell.swift in Sources */,

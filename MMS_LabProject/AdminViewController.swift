@@ -1,10 +1,3 @@
-//
-//  AdminViewController.swift
-//  MMS_LabProject
-//
-//  Created by prk on 10/20/23.
-//
-
 import UIKit
 import CoreData
 
@@ -78,5 +71,13 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableViewAdmin.dataSource = self
         
         loadData()
+    }
+    
+    @IBAction func logoutBtn(_ sender: Any) {
+        //self.navigationController?.popToRootViewController(animated: true)
+        if let nextView = storyboard?.instantiateViewController(identifier: "rootView") {
+            let rootView = nextView as! ViewController
+            navigationController?.setViewControllers([rootView], animated: true)
+        }
     }
 }

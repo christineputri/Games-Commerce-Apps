@@ -1,10 +1,3 @@
-//
-//  AdminSuccessViewController.swift
-//  MMS_LabProject
-//
-//  Created by prk on 05/12/23.
-//
-
 import UIKit
 
 class AdminSuccessViewController: UIViewController {
@@ -14,7 +7,7 @@ class AdminSuccessViewController: UIViewController {
 
     }
     
-    @IBAction func logoutButton(_ sender: UIButton) {
+    @IBAction func backHomeBtn(_ sender: Any) {
         navigateToAwal()
     }
     

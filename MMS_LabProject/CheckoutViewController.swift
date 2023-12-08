@@ -1,13 +1,6 @@
-//
-//  COViewController.swift
-//  MMS_LabProject
-//
-//  Created by prk on 12/4/23.
-//
-
 import UIKit
 
-class COViewController: UIViewController {
+class CheckoutViewController: UIViewController {
     
     @IBOutlet weak var totalQuantity: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
@@ -101,11 +94,12 @@ class COViewController: UIViewController {
         return cvvPredicate.evaluate(with: cvv)
     }
     
-    @IBAction func paymentButtonTapped(_ sender: UIButton) {
+    @IBAction func paymentButtonTapped(_ sender: Any) {
         if validateInput() {
             performSegue(withIdentifier: "CustomerViewController", sender: self)
         }
     }
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CustomerViewController" {
             let CustomerViewController = segue.destination as! CustomerViewController
