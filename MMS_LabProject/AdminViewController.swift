@@ -85,6 +85,5 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             vc.dataCellTable = arr[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
-            
     }
 }
