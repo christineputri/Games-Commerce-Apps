@@ -48,9 +48,13 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             let result = try context.fetch(request) as! [NSManagedObject]
             
             for data in result {
-                arr.append(dataItem(priceProduct: data.value(forKey: "productPrice") as! Int, titleProduct: data.value(forKey: "productName") as! String, categoryProduct: CategoryGame(rawValue: data.value(forKey: "productCategory") as! CategoryGame.RawValue) ?? CategoryGame.adventure, description: data.value(forKey: "productDesc") as! String, imageProduct: data.value(forKey: "productImage") as! String))
+                arr.append(dataItem(
+                    priceProduct: data.value(forKey: "productPrice") as! Int,
+                    titleProduct: data.value(forKey: "productName") as! String,
+                    categoryProduct: CategoryGame(rawValue: data.value(forKey: "productCategory") as! CategoryGame.RawValue) ?? CategoryGame.adventure,
+                    description: data.value(forKey: "productDesc") as! String,
+                    imageProduct: data.value(forKey: "productImage") as! String))
             }
-            
             tableViewAdmin.reloadData()
         } catch {
             print("Add error pas di bagian load data")
