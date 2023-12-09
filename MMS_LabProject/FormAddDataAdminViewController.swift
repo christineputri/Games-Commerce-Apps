@@ -35,7 +35,7 @@ class FormAddDataAdminViewController: UIViewController, UIImagePickerControllerD
         let title = titleTextField.text!
         let description = descriptionTextField.text!
         let price = Int(priceTextField.text!)
-        let category = categoryTextField.text!
+        let category = categoryTextField.text! 
         let image = "mobile_legend"
         
         let entity = NSEntityDescription.entity(forEntityName: "GameProduct", in: context)
