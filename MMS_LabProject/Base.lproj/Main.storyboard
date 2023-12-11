@@ -147,7 +147,7 @@
         <!--Admin View Controller-->
         <scene sceneID="gFU-vj-h88">
             <objects>
-                <viewController restorationIdentifier="adminView" storyboardIdentifier="adminView" id="892-ey-nuE" customClass="AdminViewController" customModule="MMS_LabProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="adminView" storyboardIdentifier="adminView" keyboardType="off" id="892-ey-nuE" customClass="AdminViewController" customModule="MMS_LabProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" semanticContentAttribute="playback" id="bsH-fR-tFs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,9 +266,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Z2-Te-GJR"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="namaAdmin" destination="ZCH-mx-Bxh" id="3oQ-Dy-IJ5"/>
-                        <outlet property="tableViewAdmin" destination="MLo-ZT-8TO" id="W2T-91-eeq"/>
+                        <outlet property="tableViewAdmin" destination="MLo-ZT-8TO" id="fiB-TW-2fo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5N-PR-t0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -280,7 +282,7 @@
             <objects>
                 <viewController id="B9f-qm-0dw" customClass="FormAddDataAdminViewController" customModule="MMS_LabProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCk-J3-XLo">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebI-29-7TU">
@@ -323,7 +325,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvi-Gq-ZQ8">
-                                <rect key="frame" x="40" y="698" width="313" height="35"/>
+                                <rect key="frame" x="40" y="733" width="313" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Product">
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>

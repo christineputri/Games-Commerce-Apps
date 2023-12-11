@@ -29,7 +29,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tableViewAdmin: UITableView!
     
-    var arr: [dataItem] = []
+    var arr: [dataItem]  = []
     
     func initData(){
         arr.append(dataItem(priceProduct: 300, titleProduct: "God Of War : Ragnarok", categoryProduct: CategoryGame.adventure, description: "Adventure story games about Gods", imageProduct: "godofwar"))
@@ -49,7 +49,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             for data in result {
                 arr.append(dataItem(
-                    priceProduct: data.value(forKey: "productPrice") as! Int,
+                    priceProduct: data.value(forKey: "productPrice") as? Int ?? 1000,
                     titleProduct: data.value(forKey: "productName") as! String,
                     categoryProduct: CategoryGame(rawValue: data.value(forKey: "productCategory") as! CategoryGame.RawValue) ?? CategoryGame.adventure,
                     description: data.value(forKey: "productDesc") as! String,
@@ -71,14 +71,10 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         
-        tableViewAdmin.delegate = self
-        tableViewAdmin.dataSource = self
-        
         loadData()
     }
     
     @IBAction func logoutBtn(_ sender: Any) {
-        //self.navigationController?.popToRootViewController(animated: true)
         if let nextView = storyboard?.instantiateViewController(identifier: "rootView") {
             let rootView = nextView as! ViewController
             navigationController?.setViewControllers([rootView], animated: true)
@@ -90,5 +86,16 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             vc.dataCellTable = arr[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCell.EditingStyle{
+        return.delete
+    }
+    
+    func tableView(_ tableView:UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        tableView.beginUpdates()
+        arr.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
     }
 }

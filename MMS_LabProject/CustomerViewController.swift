@@ -16,7 +16,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.itemTitleProduct.text = arr[indexPath.row].titleProduct
         cell.itemCategoryProduct.text = arr[indexPath.row].categoryProduct.rawValue
         cell.itemDetailProduct.text = arr[indexPath.row].description
-        cell.itemPriceProduct.text = "$\(arr[indexPath.row].priceProduct)"
+        cell.itemPriceProduct.text = "$\(String(describing: arr[indexPath.row].priceProduct))"
         cell.itemImageProduct.image = UIImage(named: arr[indexPath.row].imageProduct)
         
         return cell

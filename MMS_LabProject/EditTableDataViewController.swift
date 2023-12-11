@@ -10,6 +10,7 @@ class EditTableDataViewController: UIViewController {
     @IBAction func onSavedBtn(_ sender: Any) {
         
     }
+    
     var dataCellTable: dataItem?
     override func viewDidLoad() {
         super.viewDidLoad()
