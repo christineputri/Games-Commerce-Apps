@@ -57,7 +57,6 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             tableViewAdmin.reloadData()
         } catch {
-            print("Add error pas di bagian load data")
         }
     }
     
@@ -84,7 +83,13 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = (storyboard?.instantiateViewController(withIdentifier: "edit_cell") as? EditTableDataViewController){
             vc.dataCellTable = arr[indexPath.row]
+//            self.navigationController?.pushViewController(vc, animated: true)
+            vc.updateCallback = { updatedDataItem in
+                self.arr[indexPath.row] = updatedDataItem
+                        tableView.reloadRows(at: [indexPath], with: .automatic)
+                    }
             self.navigationController?.pushViewController(vc, animated: true)
+            loadData()
         }
     }
     
