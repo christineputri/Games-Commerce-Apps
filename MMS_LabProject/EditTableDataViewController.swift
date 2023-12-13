@@ -2,7 +2,6 @@ import UIKit
 
 class EditTableDataViewController: UIViewController {
     
-    
     @IBOutlet weak var titleUpdateData: UITextField!
     @IBOutlet weak var descUpdateData: UITextField!
     @IBOutlet weak var priceUpdateData: UITextField!
@@ -15,10 +14,18 @@ class EditTableDataViewController: UIViewController {
               let category = categoryUpdateData.text, !category.isEmpty else {
             showAlert(message: "Error data saved")
             return
+        }
+        
+        dataCellTable?.titleProduct = title
+        dataCellTable?.description = desc
+        dataCellTable?.priceProduct = Int(price)
+        dataCellTable?.categoryProduct = CategoryGame(rawValue: category) ?? .FPS
+        dataCellTable?.imageProduct = "mobile-legend"
+        updateCallback?(dataCellTable!)
     }
     
-    var dataCellTable: dataItem?
-    var updateCallback: ((dataItem) -> Void)?
+    var dataCellTable: dataItem!
+    var updateCallback: ((dataItem) -> Void)! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,28 +36,14 @@ class EditTableDataViewController: UIViewController {
         categoryUpdateData.text = dataCellTable?.categoryProduct.rawValue ?? CategoryGame.FPS.rawValue
         
             
-            dataCellTable?.titleProduct = title
-            dataCellTable?.description = desc
-            dataCellTable?.priceProduct = Int(price)
-            dataCellTable?.categoryProduct = CategoryGame(rawValue: category) ?? .FPS
-            dataCellTable?.imageProduct = "mobile-legend"
-            
-            //        if let nextView = storyboard?.instantiateViewController(identifier: "success_page") {
-            //            let rootView = nextView as! AdminSuccessViewController
-            //            navigationController?.setViewControllers([rootView], animated: true)
-            //        }
-            updateCallback?(dataCellTable!)
             
         }
                 
-                // Metode untuk menampilkan pesan kesalahan
-                private func showAlert(message: String) {
-                    let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alert.addAction(okAction)
-                    present(alert, animated: true, completion: nil)
-                }
-                
+        // Metode untuk menampilkan pesan kesalahan
+      func showAlert(message: String) {
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
         }
     }
-}
