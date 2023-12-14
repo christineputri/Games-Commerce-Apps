@@ -6,6 +6,11 @@ class EditTableDataViewController: UIViewController {
     @IBOutlet weak var descUpdateData: UITextField!
     @IBOutlet weak var priceUpdateData: UITextField!
     @IBOutlet weak var categoryUpdateData: UITextField!
+    @IBOutlet weak var imageUpdateData: UIImageView!
+    
+    var dataCellTable: dataItem!
+    var updateCallback: ((dataItem) -> Void)! = nil
+    //var updateCallback: ((dataItem) -> Void)?
     
     @IBAction func onSavedBtn(_ sender: Any) {
         guard let title = titleUpdateData.text, !title.isEmpty,
@@ -24,9 +29,6 @@ class EditTableDataViewController: UIViewController {
         updateCallback?(dataCellTable!)
     }
     
-    var dataCellTable: dataItem!
-    var updateCallback: ((dataItem) -> Void)! = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("data dari prepare: \(String(describing: dataCellTable))")
@@ -34,16 +36,12 @@ class EditTableDataViewController: UIViewController {
         descUpdateData.text = dataCellTable?.description ?? "game FPS"
         priceUpdateData.text = String(dataCellTable?.priceProduct ?? 1000)
         categoryUpdateData.text = dataCellTable?.categoryProduct.rawValue ?? CategoryGame.FPS.rawValue
-        
-            
-            
-        }
-                
-        // Metode untuk menampilkan pesan kesalahan
-      func showAlert(message: String) {
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-        }
     }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+}

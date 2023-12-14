@@ -9,12 +9,11 @@ protocol controlGameProduct {
 class AdminViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, controlGameProduct {
     
     @IBOutlet weak var namaAdmin: UILabel!
+    @IBOutlet weak var tableViewAdmin: UITableView!
+    
     var context: NSManagedObjectContext!
     var nama: String?
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
-    }
+    var arr: [dataItem]  = []
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductsTableViewCell
@@ -27,19 +26,42 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    @IBOutlet weak var tableViewAdmin: UITableView!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arr.count
+    }
     
-    var arr: [dataItem]  = []
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = (storyboard?.instantiateViewController(withIdentifier: "edit_cell") as? EditTableDataViewController){
+            vc.dataCellTable = arr[indexPath.row]
+            vc.updateCallback = { updatedDataItem in
+                self.arr[indexPath.row] = updatedDataItem
+                        tableView.reloadRows(at: [indexPath], with: .automatic)
+                    }
+            self.navigationController?.pushViewController(vc, animated: true)
+            loadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCell.EditingStyle{
+        return.delete
+    }
+    
+    func tableView(_ tableView:UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        tableView.beginUpdates()
+        arr.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+    }
     
     func initData(){
         arr.append(dataItem(priceProduct: 300, titleProduct: "God Of War : Ragnarok", categoryProduct: CategoryGame.adventure, description: "Adventure story games about Gods", imageProduct: "godofwar"))
         arr.append(dataItem(priceProduct: 250, titleProduct: "Red Dead Redemption 2", categoryProduct: CategoryGame.adventure, description: "Open world game for you who want to be cowboy", imageProduct: "rdr2"))
         arr.append(dataItem(priceProduct: 500, titleProduct: "The Last Of Us", categoryProduct: CategoryGame.horror, description: "Survival story games in the zombie apocalypse", imageProduct: "tlou"))
         arr.append(dataItem(priceProduct: 200, titleProduct: "Uncharted 4", categoryProduct: CategoryGame.adventure, description: "Adveture story games and parkour mode", imageProduct: "uncharted4"))
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
     }
     
     func loadData() {
@@ -57,6 +79,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             tableViewAdmin.reloadData()
         } catch {
+            print("failed insert data")
         }
     }
     
@@ -78,29 +101,5 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             let rootView = nextView as! ViewController
             navigationController?.setViewControllers([rootView], animated: true)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = (storyboard?.instantiateViewController(withIdentifier: "edit_cell") as? EditTableDataViewController){
-            vc.dataCellTable = arr[indexPath.row]
-//            self.navigationController?.pushViewController(vc, animated: true)
-            vc.updateCallback = { updatedDataItem in
-                self.arr[indexPath.row] = updatedDataItem
-                        tableView.reloadRows(at: [indexPath], with: .automatic)
-                    }
-            self.navigationController?.pushViewController(vc, animated: true)
-            loadData()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCell.EditingStyle{
-        return.delete
-    }
-    
-    func tableView(_ tableView:UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        tableView.beginUpdates()
-        arr.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        tableView.endUpdates()
     }
 }

@@ -20,6 +20,7 @@
 		0519EC9D2AE138CE00F187DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0519EC9C2AE138CE00F187DC /* Assets.xcassets */; };
 		0519ECA02AE138CE00F187DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0519EC9E2AE138CE00F187DC /* LaunchScreen.storyboard */; };
 		052025BA2B1EF87600FA5B9C /* FormAddDataAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */; };
+		05565B862B2ABDB500DFF3FE /* CustomerSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05565B852B2ABDB500DFF3FE /* CustomerSuccessViewController.swift */; };
 		058229342B1DCE56007A33CA /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058229332B1DCE56007A33CA /* CheckoutViewController.swift */; };
 		05E9EF462B22BD2C00C5E7C8 /* EditTableDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E9EF452B22BD2C00C5E7C8 /* EditTableDataViewController.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		0519EC9F2AE138CE00F187DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0519ECA12AE138CE00F187DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAddDataAdminViewController.swift; sourceTree = "<group>"; };
+		05565B852B2ABDB500DFF3FE /* CustomerSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSuccessViewController.swift; sourceTree = "<group>"; };
 		058229332B1DCE56007A33CA /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		05E9EF452B22BD2C00C5E7C8 /* EditTableDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				052025B92B1EF87600FA5B9C /* FormAddDataAdminViewController.swift */,
 				050ED6282B1F0DE000B3FD79 /* AdminSuccessViewController.swift */,
 				05E9EF452B22BD2C00C5E7C8 /* EditTableDataViewController.swift */,
+				05565B852B2ABDB500DFF3FE /* CustomerSuccessViewController.swift */,
 			);
 			path = MMS_LabProject;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				0511B8F82AE2830700FB0780 /* AdminViewController.swift in Sources */,
 				0511B9002AE2895200FB0780 /* ProductsTableViewCell.swift in Sources */,
 				0519EC912AE138CD00F187DC /* AppDelegate.swift in Sources */,
+				05565B862B2ABDB500DFF3FE /* CustomerSuccessViewController.swift in Sources */,
 				0519EC932AE138CD00F187DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

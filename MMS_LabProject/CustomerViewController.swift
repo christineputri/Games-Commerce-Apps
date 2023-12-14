@@ -4,8 +4,11 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var totalQuantity: Int = 0
     var totalPrice: Double = 0.0
+    var arr: [dataItem] = []
     
     @IBOutlet weak var namaCustomer: UILabel!
+    @IBOutlet weak var tableViewCustomer: UITableView!
+    
     var nama: String?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr.count
@@ -22,18 +25,15 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    @IBOutlet weak var tableViewCustomer: UITableView!
-    var arr: [dataItem] = []
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
     
     func initData(){
         arr.append(dataItem(priceProduct: 300, titleProduct: "God Of War : Ragnarok", categoryProduct: CategoryGame.adventure, description: "Adventure story games about Gods", imageProduct: "godofwar"))
         arr.append(dataItem(priceProduct: 250, titleProduct: "Red Dead Redemption 2", categoryProduct: CategoryGame.adventure, description: "Open world game for you who want to be cowboy", imageProduct: "rdr2"))
         arr.append(dataItem(priceProduct: 500, titleProduct: "The Last Of Us", categoryProduct: CategoryGame.horror, description: "Survival story games in the zombie apocalypse", imageProduct: "tlou"))
         arr.append(dataItem(priceProduct: 200, titleProduct: "Uncharted 4", categoryProduct: CategoryGame.adventure, description: "Adveture story games and parkour mode", imageProduct: "uncharted4"))
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
     }
     
     override func viewDidLoad() {
@@ -44,8 +44,14 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         namaCustomer.text = "Hello, User \(nama!)"
     }
     
+    @IBAction func checkoutProductButton(_ sender: Any) {
+        if let nextView = storyboard?.instantiateViewController(identifier: "checkout_view") {
+            let checkView = nextView as! CheckoutViewController
+            navigationController?.setViewControllers([checkView], animated: true)
+        }
+    }
+    
     @IBAction func logoutBtn(_ sender: Any) {
-        //self.navigationController?.popToRootViewController(animated: true)
         if let nextView = storyboard?.instantiateViewController(identifier: "rootView") {
             let rootView = nextView as! ViewController
             navigationController?.setViewControllers([rootView], animated: true)

@@ -26,22 +26,22 @@ class CheckoutViewController: UIViewController {
     // Validasi
     func validateInput() -> Bool {
         if !isValidName(nameCC.text ?? "") {
-            showErrorAlert(message: "Invalid name. Please enter a valid name.")
+            showErrorAlert(message: "Invalid name, please enter a valid name.")
             return false
         }
         
         if !isValidCreditCardNumber(numberCC.text ?? "") {
-            showErrorAlert(message: "Invalid credit card number. Please enter a 16-digit number.")
+            showErrorAlert(message: "Invalid credit card number, please enter a 16-digit number.")
             return false
         }
         
         if !isValidExpiryDate(expCC.text ?? "") {
-            showErrorAlert(message: "Invalid expiry date. Please enter in the format MM/YYYY.")
+            showErrorAlert(message: "Invalid expiry date, please enter in the format MM/YYYY.")
             return false
         }
         
         if !isValidCVV(cvvCC.text ?? "") {
-            showErrorAlert(message: "Invalid CVV. Please enter a 3-digit number.")
+            showErrorAlert(message: "Invalid CVV, please enter a 3-digit number.")
             return false
         }
         
@@ -105,6 +105,14 @@ class CheckoutViewController: UIViewController {
             let CustomerViewController = segue.destination as! CustomerViewController
             CustomerViewController.totalQuantity = totalQuantityy
             CustomerViewController.totalPrice = totalPricee
+        }
+    }
+    
+    
+    @IBAction func tesBtn(_ sender: Any) {
+        if let nextvview = storyboard?.instantiateViewController(withIdentifier: "success_view") {
+            let success = nextvview as! CustomerSuccessViewController
+            navigationController?.setViewControllers([success], animated: true)
         }
     }
 }
