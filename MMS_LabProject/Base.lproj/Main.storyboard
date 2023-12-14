@@ -613,7 +613,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="backHomeBtn:" destination="k6B-3p-bXc" eventType="touchUpInside" id="Udm-Yt-HNb"/>
+                                    <action selector="balikHome:" destination="k6B-3p-bXc" eventType="touchUpInside" id="ecH-tb-zXg"/>
                                 </connections>
                             </button>
                         </subviews>

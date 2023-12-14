@@ -41,7 +41,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         initData()
         tableViewCustomer.dataSource = self
         tableViewCustomer.delegate = self
-        namaCustomer.text = "Hello, User \(nama!)"
+        namaCustomer.text = "Hello, User \(nama ?? "")"
     }
     
     @IBAction func checkoutProductButton(_ sender: Any) {
