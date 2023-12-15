@@ -8,6 +8,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var namaCustomer: UILabel!
     @IBOutlet weak var tableViewCustomer: UITableView!
+    @IBOutlet weak var quantityField: UILabel!
     
     var nama: String?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
