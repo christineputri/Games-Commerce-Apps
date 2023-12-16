@@ -53,6 +53,18 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func logoutBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "Attention", message: "Are you sure want to logout?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .default) {
+            (action) in self.logoutBtn()
+        }
+        let no = UIAlertAction(title: "Cancel", style: .destructive)
+                
+        alert.addAction(no)
+        alert.addAction(yes)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func logoutBtn() {
         if let nextView = storyboard?.instantiateViewController(identifier: "rootView") {
             let rootView = nextView as! ViewController
             navigationController?.setViewControllers([rootView], animated: true)
