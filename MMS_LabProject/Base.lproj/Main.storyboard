@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4iQ-Gt-Juo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4iQ-Gt-Juo">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -761,14 +760,6 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-IJ-s3A">
-                                <rect key="frame" x="159" y="571" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
-                                <connections>
-                                    <action selector="tesBtn:" destination="JGB-oT-crw" eventType="touchUpInside" id="C2H-pg-gKw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-Py-Gom">
                                 <rect key="frame" x="40" y="651" width="313" height="35"/>
                                 <state key="normal" title="Button"/>
@@ -783,6 +774,7 @@
                         <viewLayoutGuide key="safeArea" id="rUW-zN-vjg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8kb-Py-Gom" firstAttribute="centerX" secondItem="dCX-Kz-3zh" secondAttribute="centerX" id="1Wh-fq-bXy"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="gFF-WF-eYB" secondAttribute="trailing" constant="20" id="2qx-he-je8"/>
                             <constraint firstItem="7nF-hb-cde" firstAttribute="top" secondItem="Vka-eA-Bs1" secondAttribute="bottom" constant="15" id="7Gq-ar-CAj"/>
                             <constraint firstItem="bYd-5C-rf0" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="50" id="868-LG-3hY"/>
@@ -798,18 +790,14 @@
                             <constraint firstItem="gFF-WF-eYB" firstAttribute="top" secondItem="wOO-gd-BFv" secondAttribute="bottom" constant="15" id="MxI-XI-66w"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="7nF-hb-cde" secondAttribute="trailing" constant="20" id="OPc-EA-weH"/>
                             <constraint firstItem="c6Q-Ky-iDE" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="OoR-eg-lQX"/>
-                            <constraint firstItem="gkM-IJ-s3A" firstAttribute="top" secondItem="7nF-hb-cde" secondAttribute="bottom" constant="57" id="RX4-bY-mlt"/>
                             <constraint firstItem="toN-Kz-qgY" firstAttribute="top" secondItem="hYv-iO-j9H" secondAttribute="bottom" constant="15" id="UhY-Ca-Yu8"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="gkM-IJ-s3A" secondAttribute="trailing" constant="159" id="YGj-xc-HGn"/>
                             <constraint firstItem="Vka-eA-Bs1" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="aEi-Br-Stk"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="hYv-iO-j9H" secondAttribute="trailing" constant="243" id="beh-Kp-O0e"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="8kb-Py-Gom" secondAttribute="trailing" constant="40" id="bqy-jC-EF1"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="1ya-oC-PEB" secondAttribute="trailing" constant="20" id="cYk-Nm-oVZ"/>
                             <constraint firstItem="8kb-Py-Gom" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="40" id="cqe-Ct-fw4"/>
-                            <constraint firstItem="gkM-IJ-s3A" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="159" id="dxj-lt-K2M"/>
                             <constraint firstItem="1ya-oC-PEB" firstAttribute="top" secondItem="c6Q-Ky-iDE" secondAttribute="bottom" constant="15" id="dzG-TZ-UFd"/>
                             <constraint firstItem="hYv-iO-j9H" firstAttribute="top" secondItem="1ya-oC-PEB" secondAttribute="bottom" constant="20" id="gSP-y5-B5K"/>
-                            <constraint firstItem="8kb-Py-Gom" firstAttribute="top" secondItem="gkM-IJ-s3A" secondAttribute="bottom" constant="45" id="him-3B-ndO"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="toN-Kz-qgY" secondAttribute="trailing" constant="20" id="mr9-pr-Me1"/>
                             <constraint firstItem="bYd-5C-rf0" firstAttribute="top" secondItem="rUW-zN-vjg" secondAttribute="top" constant="55" id="ofN-Jm-6DF"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="bYd-5C-rf0" secondAttribute="trailing" constant="50" id="qj8-ve-JsG"/>
