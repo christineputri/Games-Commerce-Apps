@@ -14,13 +14,13 @@ class EditTableDataViewController: UIViewController {
     var updateCallback: ((dataItem) -> Void)! = nil
     var context: NSManagedObjectContext!
     var delegate: controlGameProduct?
-    //var updateCallback: ((dataItem) -> Void)?
     
     @IBAction func onSavedBtn(_ sender: Any) {
         guard let title = titleUpdateData.text, !title.isEmpty,
               let desc = descUpdateData.text, !desc.isEmpty,
               let priceTextField = priceUpdateData.text, let price = Int(priceTextField),
-              let category = categoryUpdateData.text, !category.isEmpty else {
+              let category = categoryUpdateData.text, !category.isEmpty
+        else {
             showAlert(message: "Error data saved")
             return
         }
@@ -47,7 +47,7 @@ class EditTableDataViewController: UIViewController {
         descUpdateData.text = dataCellTable?.description ?? "game FPS"
         priceUpdateData.text = String(dataCellTable?.priceProduct ?? 1000)
         categoryUpdateData.text = dataCellTable?.categoryProduct.rawValue ?? CategoryGame.FPS.rawValue
-        
+        imageUpdateData.image = UIImage(named: dataCellTable.imageProduct) ?? UIImage(named: "mobile_legend")
     }
     
     func showAlert(message: String) {
