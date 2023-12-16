@@ -492,7 +492,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQO-Fa-xyX">
-                                                    <rect key="frame" x="198" y="125" width="165" height="16"/>
+                                                    <rect key="frame" x="198" y="125" width="70" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -636,6 +636,9 @@
                     <navigationItem key="navigationItem" id="Mez-lV-ahN"/>
                     <connections>
                         <outlet property="namaCustomer" destination="dfQ-sY-hlW" id="LGi-f6-R4c"/>
+                        <outlet property="priceNumber" destination="aTt-pW-QQJ" id="yWI-9r-yQp"/>
+                        <outlet property="quantityField" destination="ekk-8l-rCZ" id="2ad-Ey-naQ"/>
+                        <outlet property="quantityNumber" destination="Z0F-Xy-1Pi" id="4RE-1e-wDm"/>
                         <outlet property="tableViewCustomer" destination="vgo-HW-CBL" id="fDD-ui-AoW"/>
                     </connections>
                 </viewController>

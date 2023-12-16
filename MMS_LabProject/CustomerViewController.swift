@@ -8,7 +8,9 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var namaCustomer: UILabel!
     @IBOutlet weak var tableViewCustomer: UITableView!
-    @IBOutlet weak var quantityField: UILabel!
+    @IBOutlet weak var quantityField: UITextField!
+    @IBOutlet weak var quantityNumber: UILabel!
+    @IBOutlet weak var priceNumber: UILabel!
     
     var nama: String?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,6 +45,8 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         tableViewCustomer.dataSource = self
         tableViewCustomer.delegate = self
         namaCustomer.text = "Hello, User \(nama ?? "")"
+        quantityNumber.text = String(totalQuantity)
+        priceNumber.text = String(totalPrice)
     }
     
     @IBAction func checkoutProductButton(_ sender: Any) {
