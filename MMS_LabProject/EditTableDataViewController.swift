@@ -16,10 +16,11 @@ class EditTableDataViewController: UIViewController {
     var delegate: controlGameProduct?
     
     @IBAction func onSavedBtn(_ sender: Any) {
+        var dataImage = dataCellTable.imageProduct
         guard let title = titleUpdateData.text, !title.isEmpty,
-              let desc = descUpdateData.text, !desc.isEmpty,
-              let priceTextField = priceUpdateData.text, let price = Int(priceTextField),
-              let category = categoryUpdateData.text, !category.isEmpty
+        let desc = descUpdateData.text, !desc.isEmpty,
+        let priceTextField = priceUpdateData.text, let price = Int(priceTextField),
+        let category = categoryUpdateData.text, !category.isEmpty
         else {
             showAlert(message: "Error data saved")
             return
@@ -29,7 +30,7 @@ class EditTableDataViewController: UIViewController {
         dataCellTable?.description = desc
         dataCellTable?.priceProduct = Int(price)
         dataCellTable?.categoryProduct = CategoryGame(rawValue: category) ?? .FPS
-        dataCellTable?.imageProduct = "mobile-legend"
+        dataCellTable?.imageProduct = dataImage
         updateCallback?(dataCellTable!)
 
 //        if let nextView = storyboard?.instantiateViewController(identifier: "success_page") {
