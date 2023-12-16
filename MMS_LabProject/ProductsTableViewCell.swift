@@ -7,6 +7,7 @@ class ProductsTableViewCell: UITableViewCell {
     @IBOutlet weak var itemCategoryProduct: UILabel!
     @IBOutlet weak var itemTitleProduct: UILabel!
     @IBOutlet weak var itemImageProduct: UIImageView!
+    @IBOutlet weak var quantityField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

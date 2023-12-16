@@ -8,7 +8,6 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var namaCustomer: UILabel!
     @IBOutlet weak var tableViewCustomer: UITableView!
-    @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var quantityNumber: UILabel!
     @IBOutlet weak var priceNumber: UILabel!
     
