@@ -56,10 +56,13 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
                 arr[textField.tag].productQuantity = quantity
                 updateTotalQuantityLabel()
             }
+            else{
+                quantityNumber.text = "0"
+            }
         }
 
         func updateTotalQuantityLabel() {
-            totalQuantity = arr.reduce(into: 0) { $0 + $1.productQuantity}
+            totalQuantity = arr.reduce(0) { $0 + $1.productQuantity}
             quantityNumber.text = "\(totalQuantity)"
         }
     
