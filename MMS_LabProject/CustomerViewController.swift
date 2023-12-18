@@ -23,6 +23,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.itemDetailProduct.text = arr[indexPath.row].description
         cell.itemPriceProduct.text = "$\(String(describing: arr[indexPath.row].priceProduct))"
         cell.itemImageProduct.image = UIImage(named: arr[indexPath.row].imageProduct)
+        
         cell.quantityField.tag = indexPath.row
         cell.quantityField.addTarget(self, action: #selector(quantityFieldDidChange(_:)), for: .editingChanged)
         
@@ -41,30 +42,30 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func viewDidLoad() {
-            super.viewDidLoad()
-            initData()
-            tableViewCustomer.dataSource = self
-            tableViewCustomer.delegate = self
-            namaCustomer.text = "Hello, User \(nama ?? "")"
-            updateTotalQuantityLabel()
-            quantityNumber.text = String(totalQuantity)
-            priceNumber.text = String(totalPrice)
-        }
+        super.viewDidLoad()
+        initData()
+        tableViewCustomer.dataSource = self
+        tableViewCustomer.delegate = self
+        namaCustomer.text = "Hello, User \(nama ?? "")"
+        updateTotalQuantityLabel()
+        quantityNumber.text = String(totalQuantity)
+        priceNumber.text = String(totalPrice)
+    }
         
-        @objc func quantityFieldDidChange(_ textField: UITextField) {
-            if let quantity = Int(textField.text ?? ""), quantity >= 0 {
-                arr[textField.tag].productQuantity = quantity
-                updateTotalQuantityLabel()
-            }
-            else{
-                quantityNumber.text = "0"
-            }
+    @objc func quantityFieldDidChange(_ textField: UITextField) {
+        if let quantity = Int(textField.text ?? ""), quantity >= 0 {
+            arr[textField.tag].productQuantity = quantity
+            updateTotalQuantityLabel()
         }
+        else{
+            quantityNumber.text = "0"
+        }
+    }
 
-        func updateTotalQuantityLabel() {
-            totalQuantity = arr.reduce(0) { $0 + $1.productQuantity}
-            quantityNumber.text = "\(totalQuantity)"
-        }
+    func updateTotalQuantityLabel() {
+        totalQuantity = arr.reduce(0) { $0 + $1.productQuantity}
+        quantityNumber.text = "\(totalQuantity)"
+    }
     
     @IBAction func checkoutProductButton(_ sender: Any) {
         if let nextView = storyboard?.instantiateViewController(identifier: "checkout_view") {
