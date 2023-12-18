@@ -21,4 +21,14 @@ struct dataItem{
     var categoryProduct: CategoryGame
     var description: String
     var imageProduct: String
+    var productQuantity: Int
+    
+    init(priceProduct: Int, titleProduct: String, categoryProduct: CategoryGame, description: String, imageProduct: String) {
+        self.priceProduct = priceProduct
+        self.titleProduct = titleProduct
+        self.categoryProduct = categoryProduct
+        self.description = description
+        self.imageProduct = imageProduct
+        self.productQuantity = 0  // Initialize quantity to 0
+    }
 }
