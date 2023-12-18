@@ -50,12 +50,45 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         return.delete
     }
     
-    func tableView(_ tableView:UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        tableView.beginUpdates()
-        arr.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        tableView.endUpdates()
+//    func tableView(_ tableView:UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+//        tableView.beginUpdates()
+//        arr.remove(at: indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//        tableView.endUpdates()
+//    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            deleteData(indexPath: indexPath)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
     }
+    
+    func deleteData(indexPath: IndexPath) {
+        let productToDelete = arr[indexPath.row]
+
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameProduct")
+        let predicate = NSPredicate(format: "productName==%@", productToDelete.titleProduct)
+//                                    , "productDesc==%@", productToDelete.description, "productPrice==%d", productToDelete.priceProduct, "productCategory==%@", productToDelete.categoryProduct.rawValue, "productImage==%@", productToDelete.imageProduct)
+
+        do {
+            request.predicate = predicate
+            let result = try context.fetch(request) as! [NSManagedObject]
+
+            for data in result {
+                context.delete(data)
+            }
+
+            try context.save()
+            loadData()
+        } catch {
+            print("Data removed failed: \(error)")
+        }
+        loadData()
+    }
+
     
     func initData(){
         arr.append(dataItem(priceProduct: 300, titleProduct: "God Of War : Ragnarok", categoryProduct: CategoryGame.adventure, description: "Adventure story games about Gods", imageProduct: "godofwar"))
