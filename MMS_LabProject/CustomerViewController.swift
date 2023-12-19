@@ -52,6 +52,11 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         updateTotalQuantityLabel()
         quantityNumber.text = String(totalQuantity)
         priceNumber.text = String(totalPrice)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
+        loadData()
     }
         
     @objc func quantityFieldDidChange(_ textField: UITextField) {
@@ -63,6 +68,25 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         if (quantity ?? 0) >= 1{
             arr[textField.tag].productQuantity = (quantity ?? 0)
             updateTotalQuantityLabel()
+        }
+    }
+    
+    func loadData() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameProduct")
+        print("request admin: \(request)")
+        do {
+            let result = try context.fetch(request) as! [NSManagedObject]
+            for data in result {
+                arr.append(dataItem(
+                    priceProduct: data.value(forKey: "productPrice") as? Int ?? 1000,
+                    titleProduct: data.value(forKey: "productName") as! String,
+                    categoryProduct: CategoryGame(rawValue: data.value(forKey: "productCategory") as! CategoryGame.RawValue) ?? CategoryGame.adventure,
+                    description: data.value(forKey: "productDesc") as! String,
+                    imageProduct: data.value(forKey: "productImage") as! String))
+            }
+            tableViewCustomer.reloadData()
+        } catch {
+            print("Failed insert data")
         }
     }
 
