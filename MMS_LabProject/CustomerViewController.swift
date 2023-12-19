@@ -31,7 +31,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 170
     }
     
     func initData(){
@@ -53,12 +53,14 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
         
     @objc func quantityFieldDidChange(_ textField: UITextField) {
-        if let quantity = Int(textField.text ?? ""), quantity >= 0 {
-            arr[textField.tag].productQuantity = quantity
+        let quantity = Int(textField.text ?? "")
+        if quantity == nil{
+            arr[textField.tag].productQuantity = 0
             updateTotalQuantityLabel()
         }
-        else{
-            quantityNumber.text = "0"
+        if (quantity ?? 0) >= 1{
+            arr[textField.tag].productQuantity = (quantity ?? 0)
+            updateTotalQuantityLabel()
         }
     }
 
