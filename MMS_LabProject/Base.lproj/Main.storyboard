@@ -535,7 +535,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="JGB-oT-crw" kind="push" id="YpL-1a-IhE"/>
+                                    <action selector="checkoutProductButton:" destination="oaa-bU-tYG" eventType="touchUpInside" id="G83-da-Sjv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-e8-Pev">
@@ -706,61 +706,61 @@
             <objects>
                 <viewController storyboardIdentifier="checkout_view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JGB-oT-crw" customClass="CheckoutViewController" customModule="MMS_LabProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCX-Kz-3zh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYd-5C-rf0">
-                                <rect key="frame" x="50" y="114" width="293" height="26.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYd-5C-rf0">
+                                <rect key="frame" x="50" y="109" width="293" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-Ky-iDE">
-                                <rect key="frame" x="20" y="190" width="38" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="30" y="196" width="45" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Holder name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ya-oC-PEB">
-                                <rect key="frame" x="20" y="222" width="353" height="34"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <rect key="frame" x="30" y="235.33333333333334" width="333" height="34.000000000000028"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYv-iO-j9H">
-                                <rect key="frame" x="20" y="276" width="130" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="30" y="299.33333333333331" width="153" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Credit card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="toN-Kz-qgY">
-                                <rect key="frame" x="20" y="308" width="353" height="34"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <rect key="frame" x="30" y="339.66666666666669" width="333" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOO-gd-BFv">
-                                <rect key="frame" x="20" y="362" width="74" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="30" y="403.66666666666669" width="87" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Credit card expiry date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFF-WF-eYB">
-                                <rect key="frame" x="20" y="394" width="353" height="34"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <rect key="frame" x="30" y="444" width="333" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vka-eA-Bs1">
-                                <rect key="frame" x="20" y="448" width="29" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="30" y="507.99999999999994" width="34" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7nF-hb-cde">
-                                <rect key="frame" x="20" y="480" width="353" height="34"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <rect key="frame" x="30" y="548.33333333333337" width="333" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-Py-Gom">
-                                <rect key="frame" x="40" y="616" width="313" height="35"/>
+                                <rect key="frame" x="30" y="752.33333333333337" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Payment">
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
@@ -773,37 +773,34 @@
                         <viewLayoutGuide key="safeArea" id="rUW-zN-vjg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8kb-Py-Gom" firstAttribute="centerX" secondItem="dCX-Kz-3zh" secondAttribute="centerX" id="1Wh-fq-bXy"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="gFF-WF-eYB" secondAttribute="trailing" constant="20" id="2qx-he-je8"/>
-                            <constraint firstItem="7nF-hb-cde" firstAttribute="top" secondItem="Vka-eA-Bs1" secondAttribute="bottom" constant="15" id="7Gq-ar-CAj"/>
-                            <constraint firstItem="bYd-5C-rf0" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="50" id="868-LG-3hY"/>
-                            <constraint firstItem="wOO-gd-BFv" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="BWo-l0-j48"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="c6Q-Ky-iDE" secondAttribute="trailing" constant="335" id="BhM-bh-WFq"/>
-                            <constraint firstItem="toN-Kz-qgY" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="CQj-R6-6lp"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="Vka-eA-Bs1" secondAttribute="trailing" constant="344" id="DOx-uO-OSN"/>
-                            <constraint firstItem="wOO-gd-BFv" firstAttribute="top" secondItem="toN-Kz-qgY" secondAttribute="bottom" constant="20" id="Dd8-4M-b5M"/>
-                            <constraint firstItem="gFF-WF-eYB" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="FXZ-e3-53F"/>
-                            <constraint firstItem="hYv-iO-j9H" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="HEi-qv-ef0"/>
-                            <constraint firstItem="7nF-hb-cde" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="IBk-BH-kHn"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="wOO-gd-BFv" secondAttribute="trailing" constant="299" id="IcO-t6-T0x"/>
-                            <constraint firstItem="gFF-WF-eYB" firstAttribute="top" secondItem="wOO-gd-BFv" secondAttribute="bottom" constant="15" id="MxI-XI-66w"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="7nF-hb-cde" secondAttribute="trailing" constant="20" id="OPc-EA-weH"/>
-                            <constraint firstItem="c6Q-Ky-iDE" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="OoR-eg-lQX"/>
-                            <constraint firstItem="toN-Kz-qgY" firstAttribute="top" secondItem="hYv-iO-j9H" secondAttribute="bottom" constant="15" id="UhY-Ca-Yu8"/>
-                            <constraint firstItem="Vka-eA-Bs1" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="aEi-Br-Stk"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="hYv-iO-j9H" secondAttribute="trailing" constant="243" id="beh-Kp-O0e"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="8kb-Py-Gom" secondAttribute="trailing" constant="40" id="bqy-jC-EF1"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="1ya-oC-PEB" secondAttribute="trailing" constant="20" id="cYk-Nm-oVZ"/>
-                            <constraint firstItem="8kb-Py-Gom" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="40" id="cqe-Ct-fw4"/>
-                            <constraint firstItem="1ya-oC-PEB" firstAttribute="top" secondItem="c6Q-Ky-iDE" secondAttribute="bottom" constant="15" id="dzG-TZ-UFd"/>
-                            <constraint firstItem="hYv-iO-j9H" firstAttribute="top" secondItem="1ya-oC-PEB" secondAttribute="bottom" constant="20" id="gSP-y5-B5K"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="toN-Kz-qgY" secondAttribute="trailing" constant="20" id="mr9-pr-Me1"/>
-                            <constraint firstItem="bYd-5C-rf0" firstAttribute="top" secondItem="rUW-zN-vjg" secondAttribute="top" constant="55" id="ofN-Jm-6DF"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="bYd-5C-rf0" secondAttribute="trailing" constant="50" id="qj8-ve-JsG"/>
-                            <constraint firstItem="c6Q-Ky-iDE" firstAttribute="top" secondItem="bYd-5C-rf0" secondAttribute="bottom" constant="49.666666666666686" id="s8P-qb-ZkU"/>
-                            <constraint firstItem="1ya-oC-PEB" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="20" id="uCO-1d-vp3"/>
-                            <constraint firstItem="Vka-eA-Bs1" firstAttribute="top" secondItem="gFF-WF-eYB" secondAttribute="bottom" constant="20" id="vhA-7l-Z8U"/>
-                            <constraint firstItem="rUW-zN-vjg" firstAttribute="bottom" secondItem="8kb-Py-Gom" secondAttribute="bottom" constant="132" id="xL5-nr-cuB"/>
+                            <constraint firstItem="7nF-hb-cde" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="6iV-yL-Bbd"/>
+                            <constraint firstItem="wOO-gd-BFv" firstAttribute="top" secondItem="toN-Kz-qgY" secondAttribute="bottom" constant="30" id="7VW-Mj-Jz8"/>
+                            <constraint firstItem="1ya-oC-PEB" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="8BG-6U-sz9"/>
+                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="bYd-5C-rf0" secondAttribute="trailing" constant="50" id="Aea-c6-hfz"/>
+                            <constraint firstItem="gFF-WF-eYB" firstAttribute="top" secondItem="wOO-gd-BFv" secondAttribute="bottom" constant="20" id="By7-zH-EHr"/>
+                            <constraint firstItem="bYd-5C-rf0" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="50" id="Dt1-0n-19u"/>
+                            <constraint firstItem="wOO-gd-BFv" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="Eva-5M-lMf"/>
+                            <constraint firstItem="bYd-5C-rf0" firstAttribute="top" secondItem="rUW-zN-vjg" secondAttribute="top" constant="50" id="Lpc-W8-nZX"/>
+                            <constraint firstItem="c6Q-Ky-iDE" firstAttribute="top" secondItem="bYd-5C-rf0" secondAttribute="bottom" constant="60" id="RIt-e4-Dur"/>
+                            <constraint firstItem="hYv-iO-j9H" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="TMb-Ko-oMy"/>
+                            <constraint firstItem="Vka-eA-Bs1" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="TUM-gb-kmc"/>
+                            <constraint firstItem="toN-Kz-qgY" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="TnL-UA-JYZ"/>
+                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="gFF-WF-eYB" secondAttribute="trailing" constant="30" id="Y59-SB-5Mu"/>
+                            <constraint firstItem="7nF-hb-cde" firstAttribute="top" secondItem="Vka-eA-Bs1" secondAttribute="bottom" constant="20" id="YFl-yY-9AJ"/>
+                            <constraint firstItem="8kb-Py-Gom" firstAttribute="top" secondItem="7nF-hb-cde" secondAttribute="bottom" constant="170" id="ah5-4V-nrz"/>
+                            <constraint firstItem="1ya-oC-PEB" firstAttribute="top" secondItem="c6Q-Ky-iDE" secondAttribute="bottom" constant="20" id="ajb-gx-VDS"/>
+                            <constraint firstItem="gFF-WF-eYB" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="cKW-TE-vdi"/>
+                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="toN-Kz-qgY" secondAttribute="trailing" constant="30" id="cjb-jC-rh0"/>
+                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="8kb-Py-Gom" secondAttribute="trailing" constant="30" id="eSz-th-A9q"/>
+                            <constraint firstItem="c6Q-Ky-iDE" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="gFN-2d-TMb"/>
+                            <constraint firstItem="hYv-iO-j9H" firstAttribute="top" secondItem="1ya-oC-PEB" secondAttribute="bottom" constant="30" id="hgX-9T-JQM"/>
+                            <constraint firstItem="8kb-Py-Gom" firstAttribute="centerX" secondItem="dCX-Kz-3zh" secondAttribute="centerX" id="j1z-yO-Srs"/>
+                            <constraint firstItem="bYd-5C-rf0" firstAttribute="centerX" secondItem="dCX-Kz-3zh" secondAttribute="centerX" id="lJg-Zf-Nyn"/>
+                            <constraint firstItem="Vka-eA-Bs1" firstAttribute="top" secondItem="gFF-WF-eYB" secondAttribute="bottom" constant="30" id="mX8-Gg-RVi"/>
+                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="1ya-oC-PEB" secondAttribute="trailing" constant="30" id="n26-xF-qJB"/>
+                            <constraint firstItem="toN-Kz-qgY" firstAttribute="top" secondItem="hYv-iO-j9H" secondAttribute="bottom" constant="20" id="n7A-g6-DyR"/>
+                            <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="7nF-hb-cde" secondAttribute="trailing" constant="30" id="nF6-TJ-Cm2"/>
+                            <constraint firstItem="8kb-Py-Gom" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="qw5-YP-fGJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l0q-Gy-b5Y"/>
@@ -816,7 +813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd3-Sh-sMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="400"/>
+            <point key="canvasLocation" x="1849.6183206106869" y="400"/>
         </scene>
         <!--Edit Table Data View Controller-->
         <scene sceneID="nSn-5S-2eO">

@@ -67,18 +67,28 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     func updateTotalQuantityLabel() {
         totalQuantity = arr.reduce(0) { $0 + $1.productQuantity}
         quantityNumber.text = "\(totalQuantity)"
+        totalPrice = arr.reduce(0.0) { $0 + Double($1.productQuantity) * Double($1.priceProduct) }
+        priceNumber.text = String(format: "$%.2f", totalPrice)
     }
     
     @IBAction func checkoutProductButton(_ sender: Any) {
-        if quantityNumber.text == "0" {
-            showAlert(message: "Please fill in the form to proceed.")
+        if totalQuantity == 0 {
+            showAlert(message: "Quantity can't be empty")
+        } else {
+            navigateToSuccessPage()
         }
+//        navigateToSuccessPage()
     }
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func navigateToSuccessPage() {
+        let checkoutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "checkout_view") as! CheckoutViewController
+        navigationController?.pushViewController(checkoutViewController, animated: true)
     }
     
     @IBAction func logoutBtn(_ sender: Any) {

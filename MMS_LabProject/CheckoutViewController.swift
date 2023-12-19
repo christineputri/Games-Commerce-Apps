@@ -37,8 +37,10 @@ class CheckoutViewController: UIViewController {
     }
 
     func navigateToSuccessPage() {
-        let successViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "success_view") as! CustomerSuccessViewController
-        navigationController?.pushViewController(successViewController, animated: true)
+        if let nextView = storyboard?.instantiateViewController(identifier: "success_view") {
+            let rootView = nextView as! CustomerSuccessViewController
+            navigationController?.setViewControllers([rootView], animated: true)
+        }
     }
 
 }
