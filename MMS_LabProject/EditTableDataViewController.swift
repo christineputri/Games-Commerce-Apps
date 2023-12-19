@@ -32,13 +32,6 @@ class EditTableDataViewController: UIViewController {
         dataCellTable?.categoryProduct = CategoryGame(rawValue: category) ?? .FPS
         dataCellTable?.imageProduct = dataImage
         updateCallback?(dataCellTable!)
-
-//        if let nextView = storyboard?.instantiateViewController(identifier: "success_page") {
-//            let rootView = nextView as! AdminSuccessViewController
-//            navigationController?.setViewControllers([rootView], animated: true)
-//        }
-        
-        //loadView()
     }
     
     override func viewDidLoad() {

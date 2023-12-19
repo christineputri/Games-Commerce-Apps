@@ -3,7 +3,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var nama: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -11,7 +10,6 @@ class ViewController: UIViewController {
     @IBAction func loginAdmin(_ sender: Any) {
         if let nextView = storyboard?.instantiateViewController(identifier: "adminView") {
             let adminView = nextView as! AdminViewController
-            
             adminView.nama = nama.text
             navigationController?.setViewControllers([adminView], animated: true)
         }

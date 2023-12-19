@@ -23,10 +23,8 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.itemDetailProduct.text = arr[indexPath.row].description
         cell.itemPriceProduct.text = "$\(String(describing: arr[indexPath.row].priceProduct))"
         cell.itemImageProduct.image = UIImage(named: arr[indexPath.row].imageProduct)
-        
         cell.quantityField.tag = indexPath.row
         cell.quantityField.addTarget(self, action: #selector(quantityFieldDidChange(_:)), for: .editingChanged)
-        
         return cell
     }
     
@@ -77,7 +75,6 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             navigateToSuccessPage()
         }
-//        navigateToSuccessPage()
     }
     
     func showAlert(message: String) {

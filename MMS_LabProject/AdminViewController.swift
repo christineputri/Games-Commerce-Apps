@@ -5,7 +5,6 @@ protocol controlGameProduct {
    func loadData()
 }
 
-
 class AdminViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, controlGameProduct {
     
     @IBOutlet weak var namaAdmin: UILabel!
@@ -22,7 +21,6 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.itemDetailProduct.text = arr[indexPath.row].description
         cell.itemPriceProduct.text = "$ \(arr[indexPath.row].priceProduct)"
         cell.itemImageProduct.image = UIImage(named: arr[indexPath.row].imageProduct)
-        
         return cell
     }
     
@@ -61,26 +59,21 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         if editingStyle == .delete {
             tableView.beginUpdates()
             deleteData(indexPath: indexPath)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }
     }
     
     func deleteData(indexPath: IndexPath) {
         let productToDelete = arr[indexPath.row]
-
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameProduct")
         let predicate = NSPredicate(format: "productName==%@", productToDelete.titleProduct)
-//                                    , "productDesc==%@", productToDelete.description, "productPrice==%d", productToDelete.priceProduct, "productCategory==%@", productToDelete.categoryProduct.rawValue, "productImage==%@", productToDelete.imageProduct)
 
         do {
             request.predicate = predicate
             let result = try context.fetch(request) as! [NSManagedObject]
-
             for data in result {
                 context.delete(data)
             }
-
             try context.save()
             loadData()
         } catch {
@@ -101,7 +94,6 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameProduct")
         do {
             let result = try context.fetch(request) as! [NSManagedObject]
-            
             for data in result {
                 arr.append(dataItem(
                     priceProduct: data.value(forKey: "productPrice") as? Int ?? 1000,
@@ -112,7 +104,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             tableViewAdmin.reloadData()
         } catch {
-            print("failed insert data")
+            print("Failed insert data")
         }
     }
     

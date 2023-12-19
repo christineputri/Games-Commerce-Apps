@@ -7,8 +7,8 @@ class FormAddDataAdminViewController: UIViewController, UIImagePickerControllerD
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
-    var delegate: controlGameProduct?
     
+    var delegate: controlGameProduct?
     var arrGameProduct = [dataItem]()
     var context: NSManagedObjectContext!
     
@@ -37,7 +37,6 @@ class FormAddDataAdminViewController: UIViewController, UIImagePickerControllerD
         let price = Int(priceTextField.text ?? "1000")
         let category = categoryTextField.text! 
         let image = "mobile_legend"
-        
         let entity = NSEntityDescription.entity(forEntityName: "GameProduct", in: context)
         let newGameProduct = NSManagedObject(entity: entity!, insertInto: context)
         newGameProduct.setValue(title, forKey: "productName")
