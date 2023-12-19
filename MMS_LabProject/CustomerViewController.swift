@@ -1,15 +1,19 @@
 import UIKit
+import CoreData
 
 class CustomerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var totalQuantity: Int = 0
     var totalPrice: Double = 0.0
     var arr: [dataItem] = []
+    var context: NSManagedObjectContext!
     
     @IBOutlet weak var namaCustomer: UILabel!
     @IBOutlet weak var tableViewCustomer: UITableView!
     @IBOutlet weak var quantityNumber: UILabel!
     @IBOutlet weak var priceNumber: UILabel!
+    
+    var delegate: controlGameProduct?
     
     var nama: String?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

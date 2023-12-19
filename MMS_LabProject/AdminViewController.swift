@@ -92,6 +92,7 @@ class AdminViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func loadData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameProduct")
+        print("request admin: \(request)")
         do {
             let result = try context.fetch(request) as! [NSManagedObject]
             for data in result {
