@@ -760,7 +760,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-Py-Gom">
-                                <rect key="frame" x="30" y="752.33333333333337" width="333" height="35"/>
+                                <rect key="frame" x="30" y="682.33333333333337" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Payment">
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
@@ -787,7 +787,7 @@
                             <constraint firstItem="toN-Kz-qgY" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="TnL-UA-JYZ"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="gFF-WF-eYB" secondAttribute="trailing" constant="30" id="Y59-SB-5Mu"/>
                             <constraint firstItem="7nF-hb-cde" firstAttribute="top" secondItem="Vka-eA-Bs1" secondAttribute="bottom" constant="20" id="YFl-yY-9AJ"/>
-                            <constraint firstItem="8kb-Py-Gom" firstAttribute="top" secondItem="7nF-hb-cde" secondAttribute="bottom" constant="170" id="ah5-4V-nrz"/>
+                            <constraint firstItem="8kb-Py-Gom" firstAttribute="top" secondItem="7nF-hb-cde" secondAttribute="bottom" constant="100" id="ah5-4V-nrz"/>
                             <constraint firstItem="1ya-oC-PEB" firstAttribute="top" secondItem="c6Q-Ky-iDE" secondAttribute="bottom" constant="20" id="ajb-gx-VDS"/>
                             <constraint firstItem="gFF-WF-eYB" firstAttribute="leading" secondItem="rUW-zN-vjg" secondAttribute="leading" constant="30" id="cKW-TE-vdi"/>
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="trailing" secondItem="toN-Kz-qgY" secondAttribute="trailing" constant="30" id="cjb-jC-rh0"/>
