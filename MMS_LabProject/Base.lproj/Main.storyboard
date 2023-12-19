@@ -535,7 +535,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="checkoutProductButton:" destination="oaa-bU-tYG" eventType="touchUpInside" id="7dV-au-fV2"/>
+                                    <segue destination="JGB-oT-crw" kind="push" id="YpL-1a-IhE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-e8-Pev">
@@ -706,7 +706,7 @@
             <objects>
                 <viewController storyboardIdentifier="checkout_view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JGB-oT-crw" customClass="CheckoutViewController" customModule="MMS_LabProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCX-Kz-3zh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYd-5C-rf0">
@@ -760,7 +760,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-Py-Gom">
-                                <rect key="frame" x="40" y="651" width="313" height="35"/>
+                                <rect key="frame" x="40" y="616" width="313" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Payment">
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
@@ -806,6 +806,7 @@
                             <constraint firstItem="rUW-zN-vjg" firstAttribute="bottom" secondItem="8kb-Py-Gom" secondAttribute="bottom" constant="132" id="xL5-nr-cuB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="l0q-Gy-b5Y"/>
                     <connections>
                         <outlet property="cvvCC" destination="7nF-hb-cde" id="5Y7-cG-6hp"/>
                         <outlet property="expCC" destination="gFF-WF-eYB" id="U0O-ff-E3X"/>
