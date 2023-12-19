@@ -29,6 +29,6 @@ struct dataItem{
         self.categoryProduct = categoryProduct
         self.description = description
         self.imageProduct = imageProduct
-        self.productQuantity = 0  // Initialize quantity to 0
+        self.productQuantity = 0
     }
 }

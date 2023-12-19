@@ -36,7 +36,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
         arr.append(dataItem(priceProduct: 300, titleProduct: "God Of War : Ragnarok", categoryProduct: CategoryGame.adventure, description: "Adventure story games about Gods", imageProduct: "godofwar"))
         arr.append(dataItem(priceProduct: 250, titleProduct: "Red Dead Redemption 2", categoryProduct: CategoryGame.adventure, description: "Open world game for you who want to be cowboy", imageProduct: "rdr2"))
         arr.append(dataItem(priceProduct: 500, titleProduct: "The Last Of Us", categoryProduct: CategoryGame.horror, description: "Survival story games in the zombie apocalypse", imageProduct: "tlou"))
-        arr.append(dataItem(priceProduct: 200, titleProduct: "Uncharted 4", categoryProduct: CategoryGame.adventure, description: "Adveture story games and parkour mode", imageProduct: "uncharted4"))
+        arr.append(dataItem(priceProduct: 200, titleProduct: "Uncharted 4", categoryProduct: CategoryGame.adventure, description: "Adventure story games and parkour mode", imageProduct: "uncharted4"))
     }
     
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class CustomerViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func checkoutProductButton(_ sender: Any) {
         if totalQuantity == 0 {
-            showAlert(message: "Quantity can't be empty")
+            showAlert(message: "Quantity can't be empty!")
         } else {
             navigateToSuccessPage()
         }
